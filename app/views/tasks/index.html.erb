@@ -4,15 +4,15 @@
   <% if task.completed %>
     <i class='far fa-check-square'></i>
     <%= link_to task.title, task_path(task) %>
-    <i class="far fa-trash-alt"><%= link_to "Delete", task_path(task.id),
-      method: :delete,
-      data: { confirm: "Delete #{task.title}?" } %></i>
+    <%= link_to task_path(task.id), method: :delete, data: { confirm: "Delete #{task.title}?"} do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
   <% else %>
     <i class='far fa-square'></i>
     <%= link_to task.title, task_path(task) %>
-    <i class="far fa-trash-alt"><%= link_to "Delete", task_path(task.id),
-      method: :delete,
-      data: { confirm: "Delete #{task.title}?" } %></i>
+    <%= link_to task_path(task.id), method: :delete, data: { confirm: "Delete #{task.title}?"} do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
   <% end %>
 <% end %>
 
